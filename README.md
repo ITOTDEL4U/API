@@ -5,14 +5,12 @@ we have http client, response and roundtrip for loging
 
 example use:
 
-import (
-    "fmt"
-    "github.com/ITOTDEL4U/API/NBU"
-    "log"
-    "time"
+import ( 
+ "fmt"   
+ "github.com/ITOTDEL4U/API/NBU"   
+ "log"  
+ "time"
 )
-
-
 
 func main(){
 
