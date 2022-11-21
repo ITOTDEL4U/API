@@ -1,29 +1,27 @@
 package main
 
 import (
-    "fmt"
-    "github.com/ITOTDEL4U/API/NBU"
-    "log"
-    "time"
+	"fmt"
+	"github.com/ITOTDEL4U/API/NBU"
+	"log"
+	"time"
 )
 
+func main() {
 
+	nbuClient, err := NBU.NewClient(time.Second * 10)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-func main(){
+	assets, err := nbuClient.GetAssets()
 
-    nbuClient, err := NBU.NewClient(time.Second * 10)
-   if err != nil{
-       log.Fatal(err)
-   }
+	if err != nil {
+		log.Fatal(err)
+	}
 
-   assets,err := nbuClient.GetAssets()
+	for _, str := range assets {
+		fmt.Println(str.INFO())
+	}
 
-   if err != nil{
-       log.Fatal(err)
-   }
-
-  for  _, str := range assets  {
-      fmt.Println(str.INFO())
-    }
-
-  }
+}
